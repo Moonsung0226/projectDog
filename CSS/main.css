@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(42,66,38);
+}
+header{
+  background-color: rgb(245,240,221);
+  margin: 0 auto;
+  margin-top: 15px;
+  height: 50px;
+  width: 1400px;
+  display: flex;
+}
+/* 상단 사진 img */
+#headimg{
+  background: url("../image/mainhead.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 5px 20px 0 40px;
+  width: 150px;
+  height: 45px;
+}
+
+/* 상단 메뉴nav 전체 */
+nav ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+nav a{
+  margin: 0 25px;
+}
+
+/* 상단 메뉴 중단 */
+#menu ul{
+  margin: 0 auto;
+}
+#menu{
+  width: 950px;
+}
+
+main{
+  width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  height: 88vh;
+  background-color: rgb(245,240,221);
+}
