@@ -13,6 +13,7 @@ header{
   margin-top: 15px;
   height: 50px;
   width: 1400px;
+  display: flex;
 }
 /* 상단 사진 img */
 #headimg{
@@ -21,20 +22,9 @@ header{
   margin: 5px 20px 0 40px;
   width: 150px;
   height: 45px;
-  float: left;
-}
-header #menu{
-  float: left;
 }
 
 /* 상단 메뉴nav 전체 */
-header nav ul li{
-  display: inline-block;
-  color: rgb(42,66,38);
-  padding: 20px 5px;
-  font-size: 15px;
-  font-weight: bold;
-}
 header nav a{
   margin: 0 25px;
 }
@@ -46,11 +36,36 @@ header nav a{
 #menu{
   width: 950px;
 }
-
+#menu ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+#sidetap ul li{
+  display: inline-block;
+  color: rgb(42,66,38);
+  padding: 20px 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
 main{
   width: 1400px;
   margin: 0 auto;
   margin-bottom: 10px;
   height: 88vh;
   background-color: rgb(245,240,221);
+  display: flex;
 }
+#leftmain{
+  width: 700px;
+ }
+ #rightmain{
+  width: 700px;
+ }
+ #rightmain img{
+  margin: 80px 0 0 50px;
+   width: 500px;
+   height: 400px;
+ }
