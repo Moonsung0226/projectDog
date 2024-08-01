@@ -53,9 +53,9 @@ header nav a{
 main{
   width: 1400px;
   margin: 0 auto;
-  height: 88vh;
   display: flex;
   flex-flow: row;
+  height: 75vh;
 }
 #leftmain{
   padding: 80px;
