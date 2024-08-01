@@ -4,11 +4,10 @@
   box-sizing: border-box;
 }
 body{
-  background-color: rgb(42,66,38);
   width: 100%;
+  background-color: rgb(245,240,221);
 }
 header{
-  background-color: rgb(245,240,221);
   margin: 0 auto;
   margin-top: 15px;
   height: 50px;
@@ -55,7 +54,6 @@ main{
   margin: 0 auto;
   margin-bottom: 10px;
   height: 88vh;
-  background-color: rgb(245,240,221);
   display: flex;
 }
 #leftmain{
