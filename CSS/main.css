@@ -62,10 +62,12 @@ main{
   width: 700px;
  }
  #rightmain{
+  position: relative;
   width: 700px;
  }
  #rightmain img{
-  margin: 80px 0 0 50px;
-   width: 500px;
-   height: 400px;
+  position: absolute;
+  top: 10%;
+   width: 600px;
+   height:500px;
  }
