@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:'mainword';
 }
 body{
   width: 100%;
@@ -54,6 +55,10 @@ header nav a{
 
 
 
+@font-face {
+  font-family: 'mainword';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
 
 /* 가운데 메인 */
 main{
@@ -69,11 +74,13 @@ main{
   float: left;
  }
  #leftmain h1{
+  font-family:'mainword';
   text-align: right;
-  font-size: 80px;
+  font-size: 90px;
   width: 600px;
  }
  #leftmain p{
+  font-family:'mainword';
   width: 600px;
   text-align: right;
  }
