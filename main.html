@@ -40,8 +40,8 @@
     <p>다독이다는 유기견을 보호하고<br> 사랑하는 사람들을 위한 공간 입니다</p>
   </section>
     <section id="textbox">
-      <a href="" id="login">
-        로그인</a>
+      <div id="login">
+        로그인</div>
     <a href="" id="signin">
         회원가입</a>
     </section>
@@ -49,6 +49,29 @@
    <section id="rightmain">
     <img src="image/mainright.png" alt="">
    </section>
+   <article id="modal">
+    <form action="">
+      <h3>로그인</h3>
+      <div id="id">
+        <label>ID</label>
+          <input type="text">
+      </div>
+      <div id="pass">
+        <label>Password</label>
+          <input type="password">
+      </div>
+      <div id="twobtn">
+        <button type="submit">LOGIN</button>
+        <button type="reset" id="hide">CANCEL</button>
+      </div>
+    </form>
+  </article>
+  <script>
+    const btn = document.getElementById("login");
+    btn.addEventListener("click", (evt) => {document.getElementById("modal").style.display = 'block'});
+    const btnhide = document.getElementById("hide");
+    btnhide.addEventListener("click", () => document.getElementById("modal").style.display = "none");
+  </script>
   </main>
 </body>
 </html>
