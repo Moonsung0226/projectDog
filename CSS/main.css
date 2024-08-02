@@ -79,13 +79,44 @@ main{
  }
 
  #leftmain #textbox{
-  margin-top: 50px;
-  margin-left: 30px;
   width: 600px;
   height: 200px;
-  background-color: rgb(42,66,38);
   border-radius: 30px;
+  display: flex;
+  align-items:end;
  }
+ #login{
+  margin-left: auto;
+ }
+ #signin{
+  margin-left: 20px;
+ }
+ #textbox a{
+  width: 170px;
+  height: 90px;
+ }
+ #textbox a div{
+  width: 170px;
+  height: 90px;
+  background-color: rgb(42,66,38);
+  border-radius: 20px;
+ }
+ #loginbox p{
+  font-size: 20px;
+  line-height: 90px;
+  text-align: center;
+  width: 170px;
+  color: rgb(245,240,221);
+ }
+ #siginbox p{
+  font-size: 20px;
+  line-height: 90px;
+  text-align: center;
+  width: 170px;
+  color: rgb(245,240,221);
+ }
+
+
  #rightmain{
   width: 700px;
  }
