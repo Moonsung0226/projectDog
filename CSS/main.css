@@ -92,30 +92,22 @@ main{
   margin-left: 20px;
  }
  #textbox a{
+  line-height: 90px;
+  text-align: center;
+  text-decoration: none;
   width: 170px;
   height: 90px;
- }
- #textbox a div{
   width: 170px;
   height: 90px;
   background-color: rgb(42,66,38);
+  color: rgb(12, 11, 6);
   border-radius: 20px;
  }
- #loginbox p{
-  font-size: 20px;
-  line-height: 90px;
-  text-align: center;
-  width: 170px;
-  color: rgb(245,240,221);
- }
- #siginbox p{
-  font-size: 20px;
-  line-height: 90px;
-  text-align: center;
-  width: 170px;
-  color: rgb(245,240,221);
- }
 
+ #textbox a:visited{
+  text-decoration: none;
+  color: rgb(245,240,221);
+ }
 
  #rightmain{
   width: 700px;
