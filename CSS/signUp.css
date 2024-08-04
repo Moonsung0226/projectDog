@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'mainlight';
 }
 /* 폰트 */
 @font-face {
@@ -75,6 +74,8 @@ header nav a{
   width: 300px;
   text-align: right;
 }
+
+
 
 /* 메인 부분 */
 main{

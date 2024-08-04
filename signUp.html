@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="CSS/signin.css">
+  <title>회원가입1</title>
+  <link rel="stylesheet" href="CSS/signUp.css">
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@
     <nav id="sidetap">
       <ul>
           <li id="login">로그인</li>
-        <a href="signIn.html" id="signin">
+        <a href="signUp.html" id="signin">
           <li>회원가입</li></a>
       </ul>
     </nav>
@@ -55,7 +55,7 @@
         $('#next').click(() => {
           console.log($(".inputbox:checked").length);
           if($('.inputbox:checked').length == 3){
-              location.href = 'signIn2.html'
+              location.href = 'signUp2.html'
           }else{
             alert("모든 항목에 체크되어야 합니다.");
           }
