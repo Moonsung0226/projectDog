@@ -22,6 +22,15 @@ header{
   color: white;
   text-shadow: -3px 0 rgb(42,66,38), 0 3px  rgb(42,66,38), 3px 0  rgb(42,66,38), 0 -3px  rgb(42,66,38);
  }
+ header h1 a{
+  text-decoration: none;
+ }
+ header h1 a:visited{
+  color: white;
+ }
+ header h1 a:active { 
+  color:white; 
+}
 
 /* 상단 메뉴nav 전체 */
 header nav a{
