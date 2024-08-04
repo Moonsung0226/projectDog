@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'mainword';
+  font-family:'mainlight';
 }
 body{
   width: 100%;
@@ -16,14 +16,6 @@ header{
   width: 1400px;
   display: flex;
 }
-/* 상단 사진 img */
-/* #headimg{
-  background: url("../image/mainhead.png") no-repeat;
-  background-size: 100% 100%;
-  margin: 5px 20px 0 40px;
-  width: 150px;
-  height: 45px;
-} */
  header h1{
   margin-top: 3px;
   font-family: 'dadoc';
@@ -50,6 +42,8 @@ header nav a{
   font-size: 15px;
   font-weight: bold;
 }
+/* 로그인 회원가입 부분 (오른쪽 상단 메뉴) */
+/* 로그인 했을 시, 로그아웃 마이페이지로 바뀌도록 만들어야함 */
 #sidetap ul li{
   display: inline-block;
   color: rgb(42,66,38);
@@ -64,21 +58,19 @@ header nav a{
 /* 여기까지 긇어서 쓰세요 */
 
 
-
+/* 폰트 */
 @font-face {
-  font-family: 'mainword';
+  font-family: 'mainlight';
   src: url('GmarketSansTTFLight.ttf') format('truetype');
-  font-family: 'mainbold';
-  src: url('GmarketSansTTFBold.ttf') format('truetype');
   font-family: 'mainmedium';
   src: url('GmarketSansTTFMedium.ttf') format('truetype');
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
   font-family: 'dadoc';
   src: url('Binggrae-Bold.ttf') format('truetype');
-
 }
 
-/* 가운데 메인 */
-/* left right 자리 바뀌어있음 볼 때 참고 */
+/* main 태그 부분 */
 main{
   width: 1400px;
   margin: 0 auto;
@@ -86,25 +78,43 @@ main{
   flex-flow: row-reverse;
   height: 75vh;
 }
-#leftmain{
+/* 왼쪽 이미지 부분 */
+ #leftmain{
+  width: 700px;
+ }
+ #leftmain img{
+  border-radius: 30px;
+   width: 600px;
+   height:600px;
+ }
+
+ /* 오른쪽  메인*/
+#rightmain{
   padding: 30px;
   padding-top: 0px;
   width: 700px;
  }
- #leftmain h1{
+
+/* 다독이다 메인글씨 */
+ #rightmain h1{
   font-family:'mainmedium';
   text-align: left;
   font-size: 90px;
   width: 600px;
  }
- #leftmain p{
+
+/* 중간 문구 */
+ #rightmain p{
   opacity: 0.6;
-  font-family:'mainword';
+  font-family:'mainlight';
   line-height: 30px;
   margin-top: 30px;
   width: 600px;
   text-align: left;
  }
+
+ /* 최근 보호중 유기견 정보목록 
+    3개씩 표시하고 등록일 우선으로 표시하도록 설계*/
  #dogcard{
   display: flex;
   background: rgba(255,255,255,0.6);
@@ -134,14 +144,7 @@ main{
   font-size: 14px;
 }
 
- #rightmain{
-  width: 700px;
- }
- #rightmain img{
-  border-radius: 30px;
-   width: 600px;
-   height:600px;
- }
+/* 로그인 모달창 */
  #modal {
   position: absolute;
   left: 0;
