@@ -100,6 +100,7 @@ main{
   width: 440px;
 }
 #accountData h1{
+  font-family: 'mainmedium';
   font-size: 35px;
 }
 #accountData div{
@@ -121,6 +122,10 @@ main{
   background-color: rgb(42,66,38);
   color: rgb(245,240,221);
   font-size: 17px;
+  font-family: 'mainbold';
+}
+#leftform p {
+  font-family: 'mainmedium';
 }
 .hide{
   display: none;
