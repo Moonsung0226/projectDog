@@ -3,14 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /* 폰트 */
 @font-face {
   font-family: 'mainlight';
   src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
   font-family: 'mainmedium';
   src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
   font-family: 'mainbold';
   src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
   font-family: 'dadoc';
   src: url('Binggrae-Bold.ttf') format('truetype');
 }

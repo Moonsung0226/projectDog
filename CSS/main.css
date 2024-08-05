@@ -3,6 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+
 body{
   width: 100%;
   background-color: rgb(245,240,221);
@@ -64,19 +87,6 @@ header nav a{
   text-align: right;
 }
 /* 여기까지 긇어서 쓰세요 */
-
-
-/* 폰트 */
-@font-face {
-  font-family: 'mainlight';
-  src: url('GmarketSansTTFLight.ttf') format('truetype');
-  font-family: 'mainmedium';
-  src: url('GmarketSansTTFMedium.ttf') format('truetype');
-  font-family: 'mainbold';
-  src: url('GmarketSansTTFBold.ttf') format('truetype');
-  font-family: 'dadoc';
-  src: url('Binggrae-Bold.ttf') format('truetype');
-}
 
 /* main 태그 부분 */
 main{
