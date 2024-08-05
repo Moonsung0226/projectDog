@@ -111,6 +111,40 @@ main{
   color: rgb(245,240,221);
   font-size: 17px;
 }
+.hide{
+  display: none;
+}
+#email{
+  position: relative;
+}
+#email div{
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  color: rgb(211, 34, 34);
+  text-align: right;
+}
+#userID{
+  position: relative;
+}
+#userID div{
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  color: rgb(211, 34, 34);
+  text-align: right;
+}
+#userPwd{
+  position: relative;
+}
+#userPwd div{
+  position: absolute;
+  width: 400px;
+  top: 30px;
+  left: -30px;
+  color: rgb(211, 34, 34);
+  text-align: right;
+}
 
 #rightarticle{
   width: 500px;
