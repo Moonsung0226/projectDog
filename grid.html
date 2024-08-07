@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
+    <script src="script.js"></script>
+
+
+
+</head>
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>다독이다 메인</title>
+        <link rel="stylesheet" href="CSS/main.css">
+      </head>
+      <body>
+        <header>
+          <h1><a href="main.html">DaDog</a></h1>
+          <nav id="menu">
+            <ul>
+              <a href="">
+                <li>보호소 찾기</li></a>
+              <a href="">
+                <li>입양하기</li></a>
+              <a href="">
+                <li>실종신고</li></a>
+              <a href="">
+                <li>보호중</li></a>
+              <a href="">
+                <li>찜목록</li></a>
+            </ul>
+          </nav>
+          <nav id="sidetap">
+            <ul>
+                <li id="login">로그인</li>
+              <a href="signUp.html" id="signin">
+                <li>회원가입</li></a>
+            </ul>
+          </nav>
+        </body>
+        </header>
+    <!-- 여기가 위 헤더 -->
+
+
+
+
+    <body>
+        <!-- 메뉴 아래 문구 -->
+        <div class="ch">
+            <h1>보호중 아이들</h1>
+        </div>
+        <hr>
+        <br>
+        <div class="hc">
+            <p>아이들에게 따듯한 손길을 내어주세요, 그리고 행복을 선물 받으세요~🍀</p>
+            <p>"입양문의는 각 지점별 카톡 또는 전화로 문의 주세요"</p>
+        </div>
+        <br>
+        <div class="hcc">
+            <p>※ 다독이다에는 <ins><b>항시 수십마리의 아이들이 보호되고 있으며 게시된 사진은 그 중 일부</b></ins>입니다.</p>
+            <p>※ 방문하여 아이들과 직접 교감하며 입양하시길 권장드리며, 입양시 무료 또는 약간의 책임비가 있을 수 있습니다.</p>
+        </div>
+        </div>
+        <br>
+        <hr>
+        <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+        <div class="container">
+            <h1 class="jeejum">지점별 조회</h1>
+            <div class="filter-box">
+                <label for="seoul">서울특별시</label>
+                <input type="checkbox" id="seoul" name="location" value="서울특별시">
+    
+                <label for="gyeonggi">경기도</label>
+                <input type="checkbox" id="gyeonggi" name="location" value="경기도">
+    
+                <label for="gangwon">강원도</label>
+                <input type="checkbox" id="gangwon" name="location" value="강원도">
+    
+                <label for="chungcheong">충청도</label>
+                <input type="checkbox" id="chungcheong" name="location" value="충청도">
+    
+                <label for="gyeongsang">경상도</label>
+                <input type="checkbox" id="gyeongsang" name="location" value="경상도">
+    
+                <label for="jeju">제주도</label>
+                <input type="checkbox" id="jeju" name="location" value="제주도">
+            </div>
+        </div>
+
+        <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+        <div class="gallery">
+            <!-- 첫 번째 줄 -->
+            <div class="gallery-item"  data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong.png" alt="Image 1">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 경기도 광주
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="서울특별시">
+                <a href="#">
+                    <img src="/image/mong6.png" alt="Image 2">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 용산
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="강원도">
+                <a href="#">
+                    <img src="/image/mong.png" alt="Image 3">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 속초
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 두 번째 줄 -->
+            <div class="gallery-item" data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong3.png" alt="Image 4">
+                    <figcaption>
+                        견종 : 진돗개<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 경기도 이천
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="강원도">
+                <a href="#">
+                    <img src="/image/mong4.png" alt="Image 5">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 삼척
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="경상도">
+                <a href="#">
+                    <img src="/image/mong5.png" alt="Image 6">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 의령
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 세 번째 줄 -->
+            <div class="gallery-item" data-location="경상도">
+                <a href="#">
+                    <img src="/image/mong3.png" alt="Image 7">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 양산
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="경상도">
+                <a href="#">
+                    <img src="/image/mong5.png" alt="Image 8">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 대구
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="전라도">
+                <a href="#">
+                    <img src="/image/mong2.png" alt="Image 9">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 여수
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 네 번째 줄 -->
+            <div class="gallery-item" data-location="전라도">
+                <a href="#">
+                    <img src="/image/mong6.png" alt="Image 10">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 목포
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="제주도">
+                <a href="#">
+                    <img src="/image/mong.png" alt="Image 11">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 제주
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="제주도">
+                <a href="#">
+                    <img src="/image/mong3.png" alt="Image 12">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 서귀포
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 다섯 번째 줄 -->
+            <div class="gallery-item" data-location="강원도">
+                <a href="#">
+                    <img src="/image/mong5.png" alt="Image 13">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 횡성
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="강원도">
+                <a href="#">
+                    <img src="/image/mong4.png" alt="Image 14">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 원주
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong5.png" alt="Image 15">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 성남
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 여섯 번째 줄 -->
+            <div class="gallery-item" data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong2.png" alt="Image 16">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 용인
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="서울특별시">
+                <a href="#">
+                    <img src="/image/mong.png" alt="Image 17">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 신림
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="서울특별시">
+                <a href="#">
+                    <img src="/image/mong3.png" alt="Image 18">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 구리
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 일곱 번째 줄 -->
+            <div class="gallery-item" data-location="경상도">
+                <a href="#">
+                    <img src="/image/mong4.png" alt="Image 19">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 울산
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="충청도">
+                <a href="#">
+                    <img src="/image/mong6.png" alt="Image 20">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 안면도
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="전라도">
+                <a href="#">
+                    <img src="/image/mong6.png" alt="Image 21">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 김제
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 일곱 번째 줄 -->
+            <div class="gallery-item" data-location="전라도">
+                <a href="#">
+                    <img src="/image/mong3.png" alt="Image 19">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 전주
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong2.png" alt="Image 20">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 용인
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong3.png" alt="Image 21">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 하남
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 여덟 번째 줄 -->
+            <div class="gallery-item" data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong4.png" alt="Image 19">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 여주
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong5.png" alt="Image 20">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 경기광주
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="경기도">
+                <a href="#">
+                    <img src="/image/mong3.png" alt="Image 21">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 경기광주
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 아홉 번째 줄 -->
+            <div class="gallery-item" data-location="강원도">
+                <a href="#">
+                    <img src="/image/mong4.png" alt="Image 19">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 강릉
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="제주도">
+                <a href="#">
+                    <img src="/image/mong2.png" alt="Image 20">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 서귀포
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="충청도">
+                <a href="#">
+                    <img src="/image/mong.png" alt="Image 21">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 태안
+                    </figcaption>
+                </a>
+            </div>
+
+            <!-- 열 번째 줄 -->
+            <div class="gallery-item" data-location="경상도">
+                <a href="#">
+                    <img src="/image/mong3.png" alt="Image 22">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 부산
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="충청도">
+                <a href="#">
+                    <img src="/image/mong5.png" alt="Image 23">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 서산
+                    </figcaption>
+                </a>
+            </div>
+            <div class="gallery-item" data-location="전라도">
+                <a href="#">
+                    <img src="/image/mong6.png" alt="Image 24">
+                    <figcaption>
+                        견종 : 골든리트리버<br>
+                        성별 : 남<br>
+                        나이 : 1살<br>
+                        중성화 : 유<br>
+                        발견날자 : 2024-07-01<br>
+                        발견장소 : 광주
+                    </figcaption>
+                </a>
+            </div>
+        </div>
+        <!-- 왼쪽 오른쪽 스크롤 -->
+        <div class="gallery-buttons">
+            <button id="prevButton" class="button-outline">이전페이지</button>
+            <div class="pagination-info">
+                <span id="currentPage"></span> / <span id="totalPages"></span>
+            </div>
+            <button id="nextButton" class="button-outline">다음페이지</button>
+        </div>
+
+        <!-- 위 아래 스크롤  -->
+        <div class="scroll-buttons">
+            <button id="scrollToTop" class="scroll-button">▲</button>
+            <button id="scrollToBottom" class="scroll-button">▼</button>
+        </div>
+
+        <!--     
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 Your Company. All rights reserved.</p>
+                <p>Contact us: <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="/about">About Us</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com/yourcompany" target="_blank" class="social-icon facebook">F</a>
+                <a href="https://twitter.com/yourcompany" target="_blank" class="social-icon twitter">T</a>
+                <a href="https://instagram.com/yourcompany" target="_blank" class="social-icon instagram">I</a>
+            </div>
+        </div>
+    </footer> -->
+
+
+</html>
