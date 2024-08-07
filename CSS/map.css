@@ -194,7 +194,7 @@ svg path.active {
  padding: 5px;
 
  /* 폰트 설정 */
- font-family: 'dadoc';
+ font-family: 'mainmedium';
  font-size: 1.2em;
 }
 /* 왼쪽메인 지역 목록 리스트 */
@@ -234,7 +234,7 @@ svg path.active {
  }
 /* 보호소 리스트 */
 .table-list {
-  font-family: 'dadoc';
+  font-family: 'mainmedium';
   padding-top: 10px;
   padding-left: 100px;
 }
