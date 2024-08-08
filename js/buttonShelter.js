@@ -19,18 +19,20 @@ const allData = [
     { name: '제주 보호소', num: '064-123-7890', addr: '제주특별자치도' }
 ];
 
-const itemsPerPage = 14;
-let currentPage = 1;
-let filteredData = [];
+const itemsPerPage = 13; //한 페이지에 표시할 보호소 수
+let currentPage = 1;     //현재 페이지 번호
+let filteredData = [];   //필터링된 데이터
 
 function displayItems(pageNumber) {
     const tbody = document.getElementById('shelterInfoBody');    
     tbody.innerHTML = ''; // 기존의 내용 삭제
-
+    
+    // 현재 페이지에 해당하는 항목의 시작과 끝 인덱스 계산
     const startIndex = (pageNumber - 1) * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, filteredData.length);
     const itemsToDisplay = filteredData.slice(startIndex, endIndex);
-
+    
+    // 필터링된 항목을 테이블에 추가
     itemsToDisplay.forEach(item => {
         const newRow = document.createElement('tr');
 
@@ -52,32 +54,34 @@ function displayItems(pageNumber) {
 
     updatePagination();
 }
-
+// 페이지네이션 버튼을 업데이트
 function updatePagination() {
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = ''; // 기존의 페이지네이션 내용 삭제
 
-
+    // 전체 페이지 수 계산
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
-
+    // 페이지 번호 버튼 생성
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement('button');
         button.textContent = i;
         button.classList.add('page-btn');
         if (i === currentPage) {
-            button.classList.add('selected');
+            button.classList.add('selected'); // 현재 페이지 버튼 강조
         }
-        button.addEventListener('click', () => changePage(i));
+        button.addEventListener('click', () => changePage(i)); // 버튼 클릭 시 페이지 변경
         pagination.appendChild(button);
     }
 }
 
+// 페이지 번호를 변경
 function changePage(pageNumber) {
     currentPage = pageNumber;
-    displayItems(pageNumber);
+    displayItems(pageNumber); // 선택한 페이지의 항목을 표시
 }
 
+// 지역 탭 클릭
 function mapTabClick(element) {
     // 모든 li 요소에서 active 클래스 제거
     const allTabs = document.querySelectorAll('.map-tabs li');
@@ -89,13 +93,12 @@ function mapTabClick(element) {
     // 클릭된 요소에 active 클래스 추가
     element.classList.add('active');
 
-
-    // rightmain의 내용 삭제 및 추가
+    // 데이터 속성에서 보호소 정보 가져오기
     const name = element.getAttribute('data-name');
     const addr = element.getAttribute('data-addr');
 
 
-    // 전체 데이터 또는 필터링된 데이터 설정
+    // 전체 데이터나 필터링된 데이터 설정
     if (name === '전체 보호소') {
         filteredData = allData; // 전체 데이터 표시
     } else {

@@ -13,8 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 function pathClick(element) {
   const targetName = element.getAttribute('data-name');
+  // data-name 값과 일치하는 id를 가진 li 요소를 선택
   const targetTab = document.querySelector(`.map-tabs li[id="${targetName}"]`);
 
+  // 모든 path 요소에서 'active' 클래스를 제거하여 비활성화
   const allPaths = document.querySelectorAll('#map path');
   allPaths.forEach(path => {
       path.classList.remove('active');
@@ -33,5 +35,25 @@ function pathClick(element) {
       // 클릭된 요소에 active 클래스 추가
       targetTab.classList.add('active');
       mapTabClick(targetTab);  // 클릭된 li의 정보를 업데이트
+  }
+}
+function openNaverMap(event) {
+  const target = event.target;
+  // 클릭된 요소의 가장 가까운 행(tr) 요소를 찾음
+  const row = target.closest('tr');
+  if (row) {
+    // 셀의 모든 텍스트를 가져와서 주소를 찾기
+    const cells = row.querySelectorAll('td');
+    // 셀 중에서 'address' 클래스를 가진 셀을 찾음
+    const addressCell = Array.from(cells).find(cell => cell.classList.contains('address'));
+    if (addressCell) {
+      // 주소 셀에서 주소 텍스트를 가져옴
+      const address = addressCell.textContent;
+      // 네이버 지도에서 검색할 URL을 생성함
+      const mapUrl = `https://map.naver.com/?query=${encodeURIComponent(address)}`;
+
+      // 새 창에서 네이버 지도 열기
+      window.open(mapUrl, '_blank'); 
+    }
   }
 }
