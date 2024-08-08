@@ -1,7 +1,5 @@
-let currentPage = 1;
-const rowsPerPage = 13;
-
-const shelters = [
+// 전체 보호소 데이터 (예시)
+const allData = [
     { name: '서울 보호소', num: '02-123-4567', addr: '서울특별시' },
     { name: '부산 보호소', num: '051-987-6543', addr: '부산광역시' },
     { name: '대구 보호소', num: '053-123-7890', addr: '대구광역시' },
@@ -21,69 +19,93 @@ const shelters = [
     { name: '제주 보호소', num: '064-123-7890', addr: '제주특별자치도' }
 ];
 
+const itemsPerPage = 14;
+let currentPage = 1;
+let filteredData = [];
+
+function displayItems(pageNumber) {
+    const tbody = document.getElementById('shelterInfoBody');    
+    tbody.innerHTML = ''; // 기존의 내용 삭제
+
+    const startIndex = (pageNumber - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, filteredData.length);
+    const itemsToDisplay = filteredData.slice(startIndex, endIndex);
+
+    itemsToDisplay.forEach(item => {
+        const newRow = document.createElement('tr');
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = item.name;
+        const numCell = document.createElement('td');
+        numCell.textContent = item.num;
+
+        const addrCell = document.createElement('td');
+        addrCell.textContent = item.addr;
+        addrCell.classList.add('address'); // 주소 셀에 스타일 클래스 추가
+
+        newRow.appendChild(nameCell);
+        newRow.appendChild(numCell);
+        newRow.appendChild(addrCell);
+
+        tbody.appendChild(newRow);
+    });
+
+    updatePagination();
+}
+
+function updatePagination() {
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = ''; // 기존의 페이지네이션 내용 삭제
+
+
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.classList.add('page-btn');
+        if (i === currentPage) {
+            button.classList.add('selected');
+        }
+        button.addEventListener('click', () => changePage(i));
+        pagination.appendChild(button);
+    }
+}
+
+function changePage(pageNumber) {
+    currentPage = pageNumber;
+    displayItems(pageNumber);
+}
+
 function mapTabClick(element) {
     // 모든 li 요소에서 active 클래스 제거
     const allTabs = document.querySelectorAll('.map-tabs li');
     allTabs.forEach(tab => {
         tab.classList.remove('active');
+
     });
 
     // 클릭된 요소에 active 클래스 추가
     element.classList.add('active');
 
-    // 데이터 필터링
-    const filter = element.id;
-    currentPage = 1;
-    displayShelters(filter);
-}
 
-function displayShelters(filter) {
-    const tbody = document.getElementById('shelterInfoBody');
-    tbody.innerHTML = ''; // 기존의 내용 삭제
+    // rightmain의 내용 삭제 및 추가
+    const name = element.getAttribute('data-name');
+    const addr = element.getAttribute('data-addr');
 
-    // 필터링된 데이터 가져오기
-    const filteredShelters = shelters.filter(shelter => filter === '전체' || shelter.addr === filter);
-    const totalShelters = filteredShelters.length;
-    const start = (currentPage - 1) * rowsPerPage;
-    const end = Math.min(start + rowsPerPage, totalShelters);
-    
-    for (let i = start; i < end; i++) {
-        const shelter = filteredShelters[i];
-        const row = document.createElement('tr');
-        row.innerHTML = `<td>${shelter.name}</td><td>${shelter.num}</td><td class="address">${shelter.addr}</td>`;
-        tbody.appendChild(row);
+
+    // 전체 데이터 또는 필터링된 데이터 설정
+    if (name === '전체 보호소') {
+        filteredData = allData; // 전체 데이터 표시
+    } else {
+        filteredData = allData.filter(item => item.addr === addr); // 지역별 데이터 필터링
     }
 
-    displayPagination(totalShelters);
-}
-
-function displayPagination(totalShelters) {
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = '';
-    const totalPages = Math.ceil(totalShelters / rowsPerPage);
-
-    for (let i = 1; i <= totalPages; i++) {
-        const pageButton = document.createElement('button');
-        pageButton.innerText = i;
-        if (i === currentPage) {
-            pageButton.disabled = true;
-        }
-        pageButton.addEventListener('click', () => {
-            currentPage = i;
-            displayShelters(document.querySelector('.map-tabs li.active').id);
-        });
-        pagination.appendChild(pageButton);
-    }
+    currentPage = 1; // 페이지를 1로 초기화
+    displayItems(currentPage); // 데이터 표시
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 초기 데이터 표시
-    displayShelters('전체');
+    displayItems(currentPage); // 페이지 로드 시 초기 데이터 표시
 });
-
-function openNaverMap(event) {
-    if (event.target.tagName === 'TD' && event.target.classList.contains('address')) {
-        const addr = event.target.textContent;
-        window.open(`https://map.naver.com/v5/search/${addr}`, '_blank');
-    }
-}
