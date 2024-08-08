@@ -142,9 +142,6 @@ main {
   height: 75vh;
 }
 #leftmain{
-  /* padding-top: 200px; */
-  /* padding-left: 100px; */
-  /* margin-bottom: 100px; */
   width: 700px;
   float: left;
 }
@@ -227,16 +224,15 @@ svg path.active {
   background: #fffaf5;
 }
 #rightmain{
-  /* padding-left: 200px; */
-  /* margin-bottom: 100px; */
   clear: both;
   width: 700px;
+  position: relative;
+  padding-right: 100px;
  }
 /* 보호소 리스트 */
 .table-list {
   font-family: 'mainmedium';
   padding-top: 10px;
-  padding-left: 100px;
 }
 th {
   display: table-cell;
@@ -276,6 +272,33 @@ th {
 }
 .content.active {
   display: block; /* active 클래스가 있을 때만 컨텐츠 표시 */
+}
+/* 페이지 버튼 */
+#pagination {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px; /* 버튼 간격 */
+  padding-right: 100px; /* 버튼 중앙으로 */
+}
+/* 페이지 버튼 모양 */
+#pagination button {
+  border: none;
+  background-color: #fc91347e;
+  border-radius: 30%;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'mainmedium';
+  cursor: pointer;
+  opacity: 0.5;
+}
+/* 선택한 페이지 버튼 색 */
+#pagination button:disabled {
+  opacity: 1;
+  font-weight: bold;
+  color: #000;
 }
 /* 지도 커서 모양 */
 path:hover{
