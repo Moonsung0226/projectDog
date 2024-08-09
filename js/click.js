@@ -60,31 +60,19 @@ function mapTabClick(element) {
       targetPath.classList.add('active');
   }
 
-  // rightmain의 내용 삭제 및 추가
-  const tbody = document.getElementById('shelterInfoBody');
-  tbody.innerHTML = ''; // 기존의 내용 삭제
-
-  // 데이터 속성에서 보호소 정보 가져오기
+  // 데이터 표시 (이전 코드와 동일하게 유지)
   const name = element.getAttribute('data-name');
-  const num = element.getAttribute('data-num');
   const addr = element.getAttribute('data-addr');
 
-  const newRow = document.createElement('tr');
+  // 전체 데이터 또는 필터링된 데이터 설정
+  if (name === '전체 보호소') {
+      filteredData = allData; // 전체 데이터 표시
+  } else {
+      filteredData = allData.filter(item => item.addr === addr); // 지역별 데이터 필터링
+  }
 
-  const nameCell = document.createElement('td');
-  nameCell.textContent = name;
-
-  const numCell = document.createElement('td');
-  numCell.textContent = num;
-
-  const addrCell = document.createElement('td');
-  addrCell.textContent = addr;
-
-  newRow.appendChild(nameCell);
-  newRow.appendChild(numCell);
-  newRow.appendChild(addrCell);
-
-  tbody.appendChild(newRow);
+  currentPage = 1; // 페이지를 1로 초기화
+  displayItems(currentPage); // 데이터 표시
 }
 
 function openNaverMap(event) {
