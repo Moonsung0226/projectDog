@@ -37,6 +37,56 @@ function pathClick(element) {
       mapTabClick(targetTab);  // 클릭된 li의 정보를 업데이트
   }
 }
+function mapTabClick(element) {
+  // 모든 li 요소에서 active 클래스 제거
+  const allTabs = document.querySelectorAll('.map-tabs li');
+  allTabs.forEach(tab => {
+      tab.classList.remove('active');
+  });
+
+  // 클릭된 요소에 active 클래스 추가
+  element.classList.add('active');
+
+  // 모든 path 요소에서 active 클래스 제거
+  const allPaths = document.querySelectorAll('#map path');
+  allPaths.forEach(path => {
+      path.classList.remove('active');
+  });
+
+  // 해당하는 path 요소에 active 클래스 추가
+  const targetName = element.getAttribute('id');
+  const targetPath = document.querySelector(`#map path[data-name="${targetName}"]`);
+  if (targetPath) {
+      targetPath.classList.add('active');
+  }
+
+  // rightmain의 내용 삭제 및 추가
+  const tbody = document.getElementById('shelterInfoBody');
+  tbody.innerHTML = ''; // 기존의 내용 삭제
+
+  // 데이터 속성에서 보호소 정보 가져오기
+  const name = element.getAttribute('data-name');
+  const num = element.getAttribute('data-num');
+  const addr = element.getAttribute('data-addr');
+
+  const newRow = document.createElement('tr');
+
+  const nameCell = document.createElement('td');
+  nameCell.textContent = name;
+
+  const numCell = document.createElement('td');
+  numCell.textContent = num;
+
+  const addrCell = document.createElement('td');
+  addrCell.textContent = addr;
+
+  newRow.appendChild(nameCell);
+  newRow.appendChild(numCell);
+  newRow.appendChild(addrCell);
+
+  tbody.appendChild(newRow);
+}
+
 function openNaverMap(event) {
   const target = event.target;
   // 클릭된 요소의 가장 가까운 행(tr) 요소를 찾음
