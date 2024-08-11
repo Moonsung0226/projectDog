@@ -134,19 +134,24 @@ hr{
   border-color: rgb(42,66,38);
   margin-bottom: 20px
 }
-
-#procedureAndPrecautions{
+#info{
+  position: relative;
+}
+#procedure{
+  position: absolute;
+  top: 150px;
   width: 1400px;
   height: 800px;
+  /* display: none; */
 }
-#procedureAndPrecautions ul{
+#procedure ul{
   width: 1200px;
   margin: 0 auto;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 400px);
 }
-#procedureAndPrecautions ul li{
+#procedure ul li{
   text-align: center;
   height: 250px;
   margin: 20px;
@@ -157,19 +162,19 @@ hr{
   font-family: 'mainmedium';
   position: relative;
 }
-li img:not(#img2,#img5){
+#procedure ul li img:not(#img2,#img5){
   object-fit: cover;
   width: 200px;
   height: 130px;
   margin: 10px 0;
   margin-bottom: 25px;
 }
-li p{
+#procedure ul li p{
   margin: 0 auto;
   margin-bottom: 100px;
   width: 300px;
 }
-li span{
+#procedure ul li span{
   position: absolute;
   font-size: 25px;
   top: 5px;
@@ -177,11 +182,61 @@ li span{
   font-family: 'mainbold';
   color: rgb(42,66,38);
 }
-
 #img2{
   width: 150px;
 }
 #img5{
   width: 160px;
   object-fit: fill;
+}
+#mainNav{
+  margin: 0 auto;
+  height: 80px;
+  width: 1200px;
+}
+#mainNav ul{
+  text-align: center;
+  height: 80px;
+}
+#mainNav ul li{
+  background-color: rgba(42,66,38,0.1);
+  color: rgba(0,0,0,0.5);
+  width: 500px;
+  height: 80px;
+  line-height: 80px;
+  display: inline-block;
+  margin: 0 40px;
+}
+#mainNav ul #no1{
+  background-color: rgba(42,66,38);
+  color: rgb(245,240,221);
+}
+
+#precautions{
+  position: absolute;
+  top: 150px;
+  width: 1400px;
+  display: none;
+}
+
+#precautions ul{
+  list-style: none;
+  width: 1200px;
+  margin: 0 auto;
+}
+#precautions ul li p:first-child{
+  font-family: "mainbold";
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.sec{
+  font-family: 'mainmedium';
+  margin-left: 150px;
+  font-size: 20px;
+}
+#precautions ul li{
+  background-color: rgba(42,66,38,0.1);
+  padding: 40px;
+  margin-bottom: 90px;
+  border-radius: 20px;
 }
