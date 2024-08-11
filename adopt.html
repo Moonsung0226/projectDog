@@ -582,7 +582,13 @@
 
 <form action="adopt2.html" id="dogForm" method="get">
   <input type="text" id="dogImg" name="dogImg">
-  <textarea name="dogInfo" id="dogInfo">
+  <!-- <textarea name="dogInfo" id="dogInfo"> -->
+  <input type="text" id="breed" name="breed">
+  <input type="text" id="gender" name="gender">
+  <input type="text" id="age" name="age">
+  <input type="text" id="start" name="start">
+  <input type="text" id="end" name="end">
+  <input type="text" id="center" name="center">
   </textarea>
   <!-- 현재 fig안에 있는 글들을 여기 form 으로 가져와서 값을 넘기는 방법을 생각 -->
    <script>
@@ -592,10 +598,25 @@
           //빈 text에 p마다 끊어서 textarea에 값을 붙여넣음
           var text = '';
           $(this).find('figcaption p').each(function(){
-            text += $(this).text().trim() + '\n';
+            var str = $(this).text().trim() + '\n'
+            if(str.includes('견종')){
+              $('#breed').val(str);
+            }else if(str.includes('성별')){
+              $('#gender').val(str);
+            }else if(str.includes('나이')){
+              $('#age').val(str);
+            }else if(str.includes('시작일')){
+              $('#start').val(str);
+            }else if(str.includes('종료일')){
+              $('#end').val(str);
+            }else if(str.includes('보호소')){
+              $('#center').val(str);
+            }
+            // text += $(this).text().trim() + '\n';
           });
-          $("#dogInfo").val(text);
+          // $("#dogInfo").val(text);
           //해당 div안의 img의 src를 가져옴
+
           var imgSrc = $(this).find('img').attr('src');
           $('#dogImg').val(imgSrc);
           //form의 액션을 실행
