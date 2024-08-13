@@ -1,6 +1,6 @@
 function showInfoBox(event) {
   const infoBox = document.getElementById('info-box');
-  infoBox.textContent = event.target.getAttribute('data-name');
+  infoBox.textContent = event.target.getAttribute('id');
   infoBox.style.display = 'block';
   infoBox.style.left = `${event.pageX + 10}px`;
   infoBox.style.top = `${event.pageY + 10}px`;

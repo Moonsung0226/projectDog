@@ -94,15 +94,15 @@ function mapTabClick(element) {
     element.classList.add('active');
 
     // 데이터 속성에서 보호소 정보 가져오기
-    const name = element.getAttribute('data-name');
+    const id = element.getAttribute('id');
     const addr = element.getAttribute('data-addr');
 
 
     // 전체 데이터나 필터링된 데이터 설정
-    if (name === '전체 보호소') {
+    if (id === '전체') {
         filteredData = allData; // 전체 데이터 표시
     } else {
-        filteredData = allData.filter(item => item.addr === addr); // 지역별 데이터 필터링
+        filteredData = allData.filter(item => item.addr.includes(addr)); // 지역별 데이터 필터링
     }
 
     currentPage = 1; // 페이지를 1로 초기화

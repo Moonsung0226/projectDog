@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
       mapTabClick(defaultTab);
 
       // 기본 path도 활성화
-      const defaultPath = document.querySelector('#map path[data-name="전체 보호소"]');
+      const defaultPath = document.querySelector('#map path[id="전체"]');
       if (defaultPath) {
           pathClick(defaultPath);
       }
   }
 });
 function pathClick(element) {
-  const targetName = element.getAttribute('data-name');
+  const targetName = element.getAttribute('id');
   // data-name 값과 일치하는 id를 가진 li 요소를 선택
   const targetTab = document.querySelector(`.map-tabs li[id="${targetName}"]`);
 
@@ -55,20 +55,20 @@ function mapTabClick(element) {
 
   // 해당하는 path 요소에 active 클래스 추가
   const targetName = element.getAttribute('id');
-  const targetPath = document.querySelector(`#map path[data-name="${targetName}"]`);
+  const targetPath = document.querySelector(`#map path[id="${targetName}"]`);
   if (targetPath) {
       targetPath.classList.add('active');
   }
 
   // 데이터 표시 (이전 코드와 동일하게 유지)
-  const name = element.getAttribute('data-name');
-  const addr = element.getAttribute('data-addr');
+  const id = element.getAttribute('id');
 
   // 전체 데이터 또는 필터링된 데이터 설정
-  if (name === '전체 보호소') {
+  if (id === '전체') {
       filteredData = allData; // 전체 데이터 표시
   } else {
-      filteredData = allData.filter(item => item.addr === addr); // 지역별 데이터 필터링
+      filteredData = allData.filter(item => item.addr.includes(id));
+      // 지역별 데이터 필터링
   }
 
   currentPage = 1; // 페이지를 1로 초기화
