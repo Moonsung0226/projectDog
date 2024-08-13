@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nextButton').addEventListener('click', nextPage);
     document.getElementById('prevButton').addEventListener('click', prevPage);
     document.getElementById('scrollToTop').addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0});
     });
 
     document.getElementById('scrollToBottom').addEventListener('click', () => {
