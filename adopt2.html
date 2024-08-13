@@ -20,7 +20,7 @@
           <li>실종신고</li></a>
         <a href="">
           <li>보호중</li></a>
-        <a href="">
+        <a href="wishList.html">
           <li>찜목록</li></a>
       </ul>
     </nav>
@@ -38,7 +38,7 @@
       <section id="dogImage">
         <img src="" alt="" id="dogImg">
         <!-- <input type="button" value="찜하기" id="btn_dog"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="like" onclick="changeRed()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="like" fill="gray">
           <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
         </svg>
       </section>
@@ -115,7 +115,7 @@
     </article>
     <script>
       $(() => {
-        //url의 파라미터(쿼리) 가져옴
+        // URL의 파라미터(쿼리) 가져옴
         let url = window.location.search;
         console.log(url);
         let param = new URLSearchParams(url);
@@ -126,6 +126,8 @@
         let starts = param.get('start');
         let ends = param.get('end');
         let centers = param.get('center');
+
+        // 페이지의 HTML 요소에 쿼리 파라미터 값을 설정
         document.getElementById("dogImg").src = dogImages;
         document.getElementById("dogBreed").innerHTML = breeds;
         document.getElementById("dogAge").innerHTML = ages;
@@ -133,12 +135,86 @@
         document.getElementById("dogCenter").innerHTML = centers;
         document.getElementById("dogStart").innerHTML = starts;
         document.getElementById("dogEnd").innerHTML = ends;
+
+        // 찜목록 가져오기
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                                  // 찜목록이 없으면 빈 배열로 초기화  ┘
+        let dogInfo = {
+          img: dogImages,
+          breed: breeds,
+          gender: genders,
+          age: ages,
+          start: starts,
+          end: ends,
+          center: centers,
+          link: url // 상세 페이지 링크
+        };
+
+        // 현재 강아지가 찜목록에 있는지 확인
+        let isLiked = wishlist.some(dog => JSON.stringify(dog) === JSON.stringify(dogInfo));
+
+        if (isLiked) {  // 찜목록에 있으면 하트를 빨간색
+          document.getElementById("like").style.fill = "red";
+        } else {        // 없으면 회색
+          document.getElementById("like").style.fill = "gray";
+        }
+
+        // 하트를 눌렀을 때 찜목록에 추가/삭제하는 함수
+        $('#like').on('click', function() {
+          let index = wishlist.findIndex(dog => JSON.stringify(dog) === JSON.stringify(dogInfo));
+
+          if (index === -1) {
+            // 강아지 정보가 찜목록에 없다면 추가
+            wishlist.push(dogInfo);
+            document.getElementById("like").style.fill = "red";
+            alert("찜 목록에 추가되었습니다.");
+          } else {
+            // 강아지 정보가 찜목록에 있다면 삭제
+            wishlist.splice(index, 1);
+            document.getElementById("like").style.fill = "gray";
+            alert("찜 목록에서 삭제되었습니다.");
+          }
+
+          // 로컬 스토리지에 찜목록 업데이트
+          localStorage.setItem('wishlist', JSON.stringify(wishlist));
+          // 찜목록을 화면에 다시 표시
+          displayWishlist();
+        });
+
+        // 찜목록을 화면에 표시하는 함수
+        function displayWishlist() {
+          let wishlistContainer = document.getElementById("wishlistContainer");
+          wishlistContainer.innerHTML = ""; // 기존 목록 초기화
+
+          wishlist.forEach((dog) => {
+            let dogDiv = document.createElement("div");
+            dogDiv.classList.add("wishlistItem"); // 찜목록 항목 클래스 추가
+
+            let dogImg = document.createElement("img");
+            dogImg.src = dog.img;
+            dogImg.alt = dog.breed;
+            
+            let dogDetails = document.createElement("p");
+            dogDetails.innerHTML = `${dog.breed}, ${dog.age}, ${dog.gender}`;
+
+            // 클릭 시 해당 상세 페이지로 이동
+            dogDiv.onclick = () => {
+              window.location.href = `adopt2.html${dog.link}`;
+            };
+
+            dogDiv.appendChild(dogImg);
+            dogDiv.appendChild(dogDetails);
+
+            wishlistContainer.appendChild(dogDiv);
+          });
+        }
+
+        // 페이지 로드 시 찜목록 표시
+        displayWishlist();
       });
-      function changeRed() {
-        document.getElementById("like").style.fill = "red";
-        alert("찜 목록에 추가되었습니다.");
-      }
-      function change(){
+
+      // 탭 전환 함수
+      function change() {
         document.getElementById('procedure').style.display = 'block';
         document.getElementById('precautions').style.display = 'none';
         document.getElementById('no2').style.backgroundColor = 'rgba(42,66,38,0.1)';
@@ -146,6 +222,7 @@
         document.getElementById('no1').style.backgroundColor = 'rgba(42,66,38,1)';
         document.getElementById('no1').style.color = 'rgb(245,240,221)';
       }
+
       function change2() {
         document.getElementById('procedure').style.display = 'none';
         document.getElementById('precautions').style.display = 'block';
@@ -154,10 +231,6 @@
         document.getElementById('no2').style.backgroundColor = 'rgba(42,66,38,1)';
         document.getElementById('no2').style.color = 'rgb(245,240,221)';
       }
-      // background-color: rgba(42,66,38,0.1);
-      // color: rgba(0,0,0,0.5);
-      // background-color: rgba(42,66,38);
-      // color: rgb(245,240,221);
     </script>
   </main>
 </body>
