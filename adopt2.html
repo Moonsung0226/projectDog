@@ -197,11 +197,6 @@
             let dogDetails = document.createElement("p");
             dogDetails.innerHTML = `${dog.breed}, ${dog.age}, ${dog.gender}`;
 
-            // 클릭 시 해당 상세 페이지로 이동
-            dogDiv.onclick = () => {
-              window.location.href = `adopt2.html${dog.link}`;
-            };
-
             dogDiv.appendChild(dogImg);
             dogDiv.appendChild(dogDetails);
 
