@@ -22,24 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function nextPage() {
         if (currentPage < totalPages) {
             currentPage++;
-        } else {
-            currentPage = 1; // 마지막 페이지에서 다시 첫 번째 페이지로 돌아감
+            updateDisplay();
+            updatePaginationInfo();
+            window.scroll(0, 0);
         }
-        updateDisplay();
-        updatePaginationInfo();
-        window.scroll(0, 0); // 페이지가 업데이트 될 때마다 맨 위로 바로 이동
     }
-
-    // 이전 페이지로 돌아가는 함수
+    
     function prevPage() {
         if (currentPage > 1) {
             currentPage--;
-        } else {
-            currentPage = totalPages; // 첫 번째 페이지에서 이전을 누르면 마지막 페이지로 돌아감
+            updateDisplay();
+            updatePaginationInfo();
+            window.scroll(0, 0);
         }
-        updateDisplay();
-        updatePaginationInfo();
-        window.scroll(0, 0); // 페이지가 업데이트 될 때마다 맨 위로 바로 이동
     }
 
     // 다음 버튼 클릭 이벤트
