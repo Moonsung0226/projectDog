@@ -53,14 +53,14 @@
   <script>
     // 로컬 스토리지에서 찜목록 가져오기
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
+  
     // 찜목록을 HTML에 추가
     let wishlistContainer = document.getElementById('wishlistContainer');
-
+  
     wishlist.forEach(dog => {
       let dogCard = document.createElement('div');
       dogCard.classList.add('dog-card');
-
+  
       dogCard.innerHTML = `
         <img src="${dog.img}" alt="Dog Image">
         <div class="dog-card-content">
@@ -70,10 +70,21 @@
           <p>${dog.center}</p>
           <p>${dog.start}</p>
           <p>${dog.end}</p>
-          <button class="adopt-button" onclick="window.location.href='adopt2.html${dog.link}'">입양하기</button>
+          <button class="adopt-button">입양하기</button>
         </div>
       `;
-      
+  
+      // 입양하기 버튼 클릭 시 확인 메시지
+      dogCard.querySelector('.adopt-button').addEventListener('click', () => {
+        let confirmAdoption = confirm("입양 신청하시겠습니까?");
+        if (confirmAdoption) {
+          alert("입양 신청이 완료되었습니다.");
+          window.location.href = `adopt2.html${dog.link}`; // 예를 선택하면 페이지 이동
+        } else {
+          alert("입양 신청을 취소하였습니다.");
+        }
+      });
+  
       wishlistContainer.appendChild(dogCard);
     });
   </script>
