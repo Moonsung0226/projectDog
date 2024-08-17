@@ -75,18 +75,23 @@
       `;
   
       // 입양하기 버튼 클릭 시 확인 메시지
-      dogCard.querySelector('.adopt-button').addEventListener('click', () => {
+      dogCard.querySelector('.adopt-button').addEventListener('click', (event) => {
+        event.stopPropagation();  // 버튼 클릭 시 부모 요소의 클릭 이벤트가 발생하지 않도록 함
         let confirmAdoption = confirm("입양 신청하시겠습니까?");
         if (confirmAdoption) {
           alert("입양 신청이 완료되었습니다.");
-          window.location.href = `adopt2.html${dog.link}`; // 예를 선택하면 페이지 이동
         } else {
           alert("입양 신청을 취소하였습니다.");
         }
       });
   
+      // 찜목록 아이템 클릭 시 해당 링크로 이동
+      dogCard.addEventListener('click', () => {
+        window.location.href = `adopt2.html${dog.link}`;
+      });
+  
       wishlistContainer.appendChild(dogCard);
     });
-  </script>
+  </script>  
 </body>
 </html>
