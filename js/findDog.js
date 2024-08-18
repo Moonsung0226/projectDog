@@ -1,3 +1,27 @@
+// 모달창 요소와 링크, 닫기 버튼 요소
+var modal = document.getElementById("myModal");
+var trigger = document.getElementById("modalTrigger");
+var closeBtn = document.getElementsByClassName("close")[0];
+
+// 문구 클릭 시 모달창을 띄우기
+trigger.addEventListener('click', function() {
+    modal.style.display = "block";
+});
+
+// 닫기 버튼 클릭 시 모달창 닫기
+closeBtn.addEventListener('click', function() {
+    modal.style.display = "none";
+});
+
+// 모달창 외부 클릭 시 모달창 닫기
+window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+});
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
 document.addEventListener('DOMContentLoaded', () => {
     const gallery = document.querySelector('.gallery');
     const galleryItems = document.querySelectorAll('.gallery-item');

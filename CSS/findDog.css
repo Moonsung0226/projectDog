@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* 폰트 */
@@ -26,12 +27,13 @@
 }
 
 body{
+ 
   background-color: rgb(245,240,221);
 }
 header{
   margin: 0 auto;
   margin-top: 15px;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   height: 50px;
   width: 1400px;
   display: flex;
@@ -83,28 +85,25 @@ header nav a{
 #sidetap ul{
   width: 300px;
   text-align: right;
-} */
-
+}
 /* 헤더 */
 
   
   
   /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ   */
   
-  body {
+  .main {
     font-family: "mainmedium";
-      margin: 0;
-      padding: 0;
-      background-color: rgb(245,240,221);
-      display: flex;
-      justify-content: center; 
-      align-items: center; 
-      min-height: 100vh;
-      display: inline-block;;
-     
-     
-      
-    }
+    margin: 0;
+    padding: 0;
+    background-color: rgb(245, 240, 221);
+    display: flex;
+    flex-direction: column; /* flex-direction을 column으로 설정하여 세로 정렬을 보장합니다. */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+    text-align: center; /* 모든 텍스트를 중앙 정렬 */
+  }
   
   /* 보호중 */
   .ch {
@@ -116,7 +115,7 @@ header nav a{
   }
   
     hr {
-      width: 1330px; /* 원하는 길이로 조절 */
+      width: 1350px; /* 원하는 길이로 조절 */
       margin: 20px auto;
       
     }
@@ -152,29 +151,80 @@ header nav a{
       font-family: "mainmedium";
   }
   
+  /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ모달 창ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+/* 모달 트리거 스타일 */
+#modalTrigger {
+  cursor: pointer;
+}
+
+/* 모달창 배경 */
+.modal {
+  font-family: "mainmedium";
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+/* 모달창 내용 */
+.modal-content {
+  background-color: rgb(245, 240, 221);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  font-family: "mainmedium";
+}
+
+/* 닫기 버튼 */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none; /* 밑줄 제거 */
+  cursor: pointer;
+}
+
+.b {
+  text-align: right;
+}
+
+
+
   /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ조회 창ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
   .containerr {
     max-width: 1260px;
-    margin: 5px auto; /* 수평 중앙 정렬을 위한 margin */
-    background-color: rgb(245,240,221);
+    margin: 10px auto;
+    background-color: rgb(245, 240, 221);
     padding: 15px;
     border-radius: 8px;
-    /* box-shadow: 0 0 10px rgb(42, 66, 38); */
-    height: 300px;
-    display: inline-block; 
-    vertical-align: top; 
-    border: 1px dashed rgb(42, 66, 38);
-  }
-  
-  .search-form {
-    background-color: rgb(245,240,221);
-    padding: 25px;
+    /* border: 1px dashed rgb(42, 66, 38); */
+}
+
+.search-form {
+    background-color: rgb(245, 240, 221);
+    padding: 20px; /* 패딩을 줄여서 form의 크기를 줄입니다. */
     border-radius: 8px;
-    box-shadow: 0 0 5px rgb(245,240,221);
-    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgb(245, 240, 221);
+    margin-bottom: 20px; /* 여백을 조정하여 form과 다른 요소 간의 간격을 조절합니다. */
     text-align: left;
-    
-  }
+    border: 1px dashed rgb(42, 66, 38); /* form에 맞게 border 스타일을 조정합니다. */
+}
   
   .input-row {
     display: flex;
@@ -251,17 +301,13 @@ header nav a{
   
   
   /* 갤러리 스타일 */
-  
-  body {
-    text-align: center; /* 중앙 정렬을 위해 text-align 사용했음*/
-    
-  }
-  
+
   
   .gallery-container {
     display: inline-block; 
     padding: 20px 0;
     gap: 20px;
+  
   }
   
   
@@ -275,7 +321,8 @@ header nav a{
       background-color: rgb(42, 66, 38);
       border-radius: 20px;
       transform: translateX(-40px); /* 왼쪽으로 -40px 이동 */
-  }
+     
+    }
   
   
   
