@@ -147,7 +147,7 @@ header nav a{
       text-decoration: underline;
   }
   
-  a {
+  .hc a {
       text-decoration-line: none;
       font-family: "mainmedium";
   }
