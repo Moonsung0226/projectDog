@@ -162,7 +162,14 @@
         && $(successID).hasClass('hide') === false
         && $(successPwd).hasClass('hide') === false
       && $(name).length !== 0 && $(tel).length !== 0){
-          location.href = 'signUp3.html'
+        let confirms = confirm("회원가입을 완료하시겠습니까?");
+        if(confirms){
+          alert('회원가입이 완료되었습니다.\n메인에서 로그인 하여 주세요');
+           location.href = 'main.html'
+        }else{
+          alert('회원가입을 취소하셨습니다.\n메인으로 돌아갑니다.');
+        }
+          location.href = 'main.html'
         }else{
           alert('입력되지 않거나 올바르게 작성하지 않은 항목이 있습니다.');
         }
