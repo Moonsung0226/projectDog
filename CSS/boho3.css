@@ -101,13 +101,15 @@ main{
   font-family: 'mainbold';
 }
 #dogImage{
-  height: 400px;
-  margin: 0 400px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
   margin-bottom: 30px;
 }
 #dogImage img {
-  height: 400px;
+  height: 500px;
 }
 #dogInfo{
   display: flex;
@@ -122,22 +124,23 @@ main{
 #infoLeft {
   padding-left: 50px;
   margin-right: 20px;
-  border: 2px solid #ccc;
+  border: 2px solid rgb(42,66,38);
   border-radius: 20px;
   width: 600px;
 }
 #infoRight {
   margin: 0;
   width: 600px;
-  border: 2px solid #ccc;
+  border: 2px solid rgb(42,66,38);
   border-radius: 20px;
 }
 #infoRight #rightTitle {
   text-align: center;
   font-weight: bold;
   font-size: 30px;
-  background-color: #ccc;
-  border: 2px solid #ccc;
+  background-color: rgb(42,66,38);
+  border: 2px solid rgb(42,66,38);
+  color: white;
   border-top-right-radius: 17px;
   border-top-left-radius: 17px;
 }
