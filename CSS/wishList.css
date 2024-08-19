@@ -86,14 +86,21 @@ header nav a{
   width: 300px;
   text-align: right;
 }
+
 /* main 태그 부분 */
 main{
   width: 1400px;
   margin: 0 auto;
   height: 75vh;
 }
+/* 메인 제목 */
+main h1 {
+  font-family: 'mainbold';
+  font-size: 45px;
+}
 /* 찜목록 전체 */
 #wishlistContainer {
+  font-family: 'mainmedium';
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 한줄에 3개씩 */
   padding: 10px;
@@ -135,8 +142,9 @@ main{
   cursor: pointer;
 }
 .adopt-button:hover {
-  background-color: #45a049;
+  background-color: #348a39;
 }
+
 /* 로그인 모달창 */
 #modal {
   position: absolute;
