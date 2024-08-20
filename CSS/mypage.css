@@ -134,6 +134,7 @@ th, td {
     padding: 20px;
     text-align: left;
     border-bottom: 1px dashed rgb(42, 66, 38);
+    
 }
 
 th {
@@ -147,17 +148,28 @@ td input[type="password"] {
     width: 1000px;
     max-width: 400px;
     padding: 8px;
-    border: 1px solid rgb(42, 66, 38);
+    /* border: 1px solid rgb(42, 66, 38); */
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 10px;
+  
+    
+    
 }
 
 td input[disabled] {
     background-color: rgb(245, 240, 221);
     color: #6c757d;
     cursor: not-allowed;
+
+}    
+
+input {
+  border: none; 
+  outline: none; 
 }
+
+
 
 input[type="button"] {
     padding: 8px 16px;
@@ -180,24 +192,29 @@ input[type="submit"] {
     color: #fff;
     cursor: pointer;
     margin-top: 15px;
+    
 }
 
 input[type="submit"]:disabled {
     background-color: #ccc;
     padding: 10px;
     margin-top: 15px;
+    
 }
 
 input[type="submit"]:hover {
     background-color: rgb(42, 66, 38);
+    
 }
 
 input[type="hidden"] {
     display: none;
+    
 }
 
 .middle form {
     text-align: right;
+    
 }
 
 
@@ -273,7 +290,7 @@ input[type="hidden"] {
 
 /* ID와 이름 필드 스타일링 */
 #id {
-    font-weight: bold;
+    /* font-weight: bold; */
     background-color: rgb(245, 240, 221);
     color: #6c757d;
 }
