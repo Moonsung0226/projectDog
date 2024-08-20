@@ -28,7 +28,7 @@ function decide_phone() {
     phoneField.disabled = true;
     phoneField.style.border = `1px solid ${disabledBorderColor}`; // 비활성 상태에서의 테두리 색상
     document.getElementById("phone_button").disabled = true;
-    document.getElementById("phone_button").value = "확정됨";
+    document.getElementById("phone_button").value = "변경 되었습니다.";
     document.getElementById("phone_button").style.color = "rgb(42, 66, 38)";
     document.getElementById("phone_button").style.backgroundColor = "rgb(245,240,221)";
     alert("전화번호가 변경되었습니다.");
@@ -57,7 +57,7 @@ function decide_email() {
     emailField.disabled = true;
     emailField.style.border = `1px solid ${disabledBorderColor}`; // 비활성 상태에서의 테두리 색상
     document.getElementById("email_button").disabled = true;
-    document.getElementById("email_button").value = "확정됨";
+    document.getElementById("email_button").value = "변경 되었습니다.";
     document.getElementById("email_button").style.color = "rgb(42, 66, 38)";
     document.getElementById("email_button").style.backgroundColor = "rgb(245,240,221)";
     alert("이메일이 변경되었습니다.");
@@ -119,7 +119,7 @@ function submitPasswordChange() {
     document.getElementById("pw").disabled = true;
     document.getElementById("pw").style.border = `1px solid ${disabledBorderColor}`; // 비활성 상태에서의 테두리 색상
     const pwButton = document.getElementById("pw_button");
-    pwButton.value = "확정됨";
+    pwButton.value = "변경 되었습니다.";
     pwButton.style.color = "rgb(42, 66, 38)";
     pwButton.style.backgroundColor = "rgb(245,240,221)";
     pwButton.disabled = true;
