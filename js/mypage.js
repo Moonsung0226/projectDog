@@ -154,6 +154,6 @@ document.getElementById('myForm').onsubmit = function (event) {
 
     alert('개인정보 변경이 완료 되었습니다.\n메인 홈페이지로 이동합니다.');
     setTimeout(function () {
-        window.location.href = 'http://127.0.0.1:5500/%EA%B3%B5%EC%9A%A9/main.html';
+        window.location.href = 'http://127.0.0.1:5500/main.html';
     }, 1000);
 };
