@@ -140,7 +140,8 @@ th, td {
 th {
     background-color: rgb(245, 240, 221);
     font-weight: bold;
-    font-family: "mainlight";
+    font-family: "mainmedium";
+    font-size: 19px;
 }
 
 td input[type="text"],
@@ -152,6 +153,9 @@ td input[type="password"] {
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 10px;
+    margin-top : 10px;
+    font-size: 18px;
+    font-family: 'mainlight';
   
     
     
