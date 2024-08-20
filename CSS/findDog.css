@@ -287,6 +287,16 @@ header nav a{
     display: none;
     
   }
+
+  .input-group input[type="date"] {
+    width: 1200px; 
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid rgb(42, 66, 38);
+    border-radius: 10px;
+    background-color: rgb(245,240,221);
+}
+
   
   /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
   
