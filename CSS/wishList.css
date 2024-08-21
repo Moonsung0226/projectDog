@@ -109,13 +109,15 @@ main h1 {
 .dog-card {
   cursor: pointer;
   display: flex;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(42,66,38);
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
 }
 /* 찜목록 이미지 */
 .dog-card img {
+  margin: 5px;
+  border-radius: 5px;
   max-width: 170px;
   height: auto;
   object-fit: cover; /* 비율을 유지하며 잘라내기 */
@@ -135,7 +137,7 @@ main h1 {
 .adopt-button {
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: #4CAF50;
+  background-color: rgb(42,66,38);
   color: white;
   border: none;
   border-radius: 3px;

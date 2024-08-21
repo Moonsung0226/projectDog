@@ -160,12 +160,12 @@ main {
   padding-top: 50px;
 }
 svg path.active {
-  fill: orange;
+  fill: rgb(42,66,38);
 }
 /* 지도 마우스 오버 */
 .land{
-  fill:rgb(91, 114, 79);
-  fill-opacity: 0.7;
+  fill: rgb(91, 114, 79);
+  /* fill-opacity: 0.7; */
   stroke: rgb(245,240,221);
   stroke-opacity: 1;
   stroke-width: 1 ;
@@ -175,24 +175,24 @@ svg path.active {
   cursor: pointer;
 }
 .land:hover {
- fill-opacity: 1.0;
- fill: orange;
+ fill: rgb(42,66,38);
 }
 /* 마우스 오버 텍스트 박스 */
 #info-box { 
- /* 마우스 올리기 전까지 숨김 */
- display: none;
- z-index: 10;
- position: absolute;
+  /* 마우스 올리기 전까지 숨김 */
+  display: none;
+  z-index: 10;
+  position: absolute;
 
- background-color: #ffffff;
- border: 3px solid rgb(248, 235, 191);
- border-radius: 5px;
- padding: 5px;
+  color: white;
+  background-color: rgb(42,66,38);
+  border: 3px solid rgb(245,240,221);
+  border-radius: 5px;
+  padding: 10px 10px 5px;
 
- /* 폰트 설정 */
- font-family: 'mainmedium';
- font-size: 1.2em;
+  /* 폰트 설정 */
+  font-family: 'mainmedium';
+  font-size: 1.2em;
 }
 /* 왼쪽메인 지역 목록 리스트 */
 .map-tab {
@@ -206,22 +206,26 @@ svg path.active {
   float: left; /* 가로로 나열 */
   width: 20%;
   height: 40px;
+  line-height: 25px;
   text-align: center;
   margin: 0.5px;
   padding: 10px;
+  font-family: 'mainmedium';
   font-size: 13px;
-  background: #a7a7a7;
+  background: rgb(91, 114, 79);
   color: #fff;
   cursor: pointer;
 }
 /* 지역 리스트 클릭 */
 .map-tabs li.active {
-  background-color: orange; /* active 클래스에 대한 스타일 추가 */
+  background-color: rgb(42,66,38); /* active 클래스에 대한 스타일 추가 */
+  font-weight: bold;
+  font-size: 1.2em;
 }
 /* 지역 리스트 호버 */
 .map-tabs li:hover {
-  color: #3a3427;
-  background: #fffaf5;
+  color: white;
+  background: rgb(42,66,38);
 }
 #rightmain{
   clear: both;
@@ -233,12 +237,12 @@ svg path.active {
 .table-list {
   font-family: 'mainmedium';
   padding-top: 10px;
+  line-height: 25px;
 }
 th {
   display: table-cell;
   vertical-align: inherit;
   font-weight: bold;
-  /* text-align: -internal-center; */
   unicode-bidi: isolate;
 }
 /* 보호소 리스트 이름, 번호 너비 */
@@ -252,7 +256,6 @@ th {
 /* 보호소 리스트 간격조절 및 칸 나누는 선 */
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
   padding: 8px;
-  line-height: 1.42857143;
   vertical-align: top;
   border-top: 1px solid #fc9234;
   text-align: center;
