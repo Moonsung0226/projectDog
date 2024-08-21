@@ -279,12 +279,12 @@ th {
 /* 페이지 버튼 */
 #pagination {
   position: absolute;
-  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px; /* 버튼 간격 */
   padding-right: 100px; /* 버튼 중앙으로 */
+  padding-top: 10px;
 }
 /* 페이지 버튼 모양 */
 #pagination button {
