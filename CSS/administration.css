@@ -87,3 +87,118 @@ header nav a{
   text-align: right;
 }
 /* 여기까지 긇어서 쓰세요 */
+
+
+main{
+  display: flex;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+/* 사이드 메뉴 부분 */
+main #sidemenu{
+  width: 200px;
+  height: 1195px;
+  border-right: 1.5px solid black;
+  padding-right: 10px;
+}
+
+main #sidemenu ul{
+  margin-top: 200px;
+  margin-right: 20px;
+  list-style: none;
+  text-align: right;
+}
+
+main #sidemenu h1{
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+main #sidemenu ul li{
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* 가운데 화면 부분*/
+main .contentManage{
+ width: 1200px;
+}
+main .right1{
+  height: 130px;
+  width: 1200px;
+  padding: 20px;
+  line-height: 50px;
+  border-bottom: 1px solid black;
+}
+main .right1 h2{
+  text-align: center;
+  font-size: 35px;
+}
+
+main .right1 #input{
+  text-align: right;
+} 
+main .right1 input[type="text"]{
+  height: 30px;
+}
+main .right1 button{
+  height: 30px;
+  width: 50px;
+}
+
+main .right2 ul{
+  width: 1200px;
+  border-bottom: 1px solid black;
+}
+
+/* 이름, 아이디, 이메일, 전화번호, 비밀번호 */
+main .right2 #userHeader li{
+  display: inline-block;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 19px;
+  font-family: 'mainmedium';
+}
+
+/* 내용 */
+main .right2 #userContent li{
+  display: inline-block;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 17px;
+  font-family: 'mainlight';
+}
+
+.userCheck{
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+.deleteUser{
+  width: 60px;
+  height: 30px;
+}
+
+main .right2 .li0{
+width: 30px;
+}
+main .right2 .li1{
+  width: 150px;
+}
+main .right2 .li2{
+  width: 180px;
+}
+main .right2 .li3{
+  width: 250px;
+}
+main .right2 .li4{
+  width: 230px;
+}
+main .right2 .li5{
+  width: 230px;
+}
+
+
