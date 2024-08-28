@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="CSS/wishList.css">
+  <link rel="stylesheet" href="CSS/list.css">
+</head>
+<body>
+  <header>
+    <h1><a href="main.html">DaDog</a></h1>
+    <nav id="menu">
+      <ul>
+        <a href="map.html"><li>보호소 찾기</li></a>
+        <a href="adopt.html"><li>입양하기</li></a>
+        <a href="findDog.html"><li>실종신고</li></a>
+        <a href="boho.html"><li>보호중</li></a>
+        <a href="wishList.html"><li>찜목록</li></a>
+      </ul>
+    </nav>
+    <nav id="sidetap">
+      <ul>
+        <li id="login">로그인</li>
+        <a href="signUp.html" id="signin"><li>회원가입</li></a>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="wrap">
+      <div class="tab_menu">
+        <ul class="list">
+          <li class="active">
+            <a href="#wishList" class="btn">관심 목록</a>
+            <div id="wishList" class="cont">
+              <!-- 찜목록을 표시할 섹션 추가 -->
+              <section id="wishlistSection">
+                <div id="wishlistContainer"></div>
+              </section>
+            </div>
+          </li>
+          <li>
+            <a href="#adopt" class="btn">입양 현황</a>
+            <div id="adopt" class="cont">Tab Content2</div>
+          </li>
+          <li>
+            <a href="#post" class="btn">내 게시글</a>
+            <div id="post" class="cont">
+              <!-- 게시글을 표시할 섹션 -->
+              <section id="postSection">
+                <div id="postContainer"></div>
+              </section>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script src="JS/login.js"></script>
+  <script>
+    // 로컬 스토리지에서 찜목록 가져오기
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  
+    // 찜목록을 HTML에 추가
+    let wishlistContainer = document.getElementById('wishlistContainer');
+  
+    wishlist.forEach(dog => {
+      let dogCard = document.createElement('div');
+      dogCard.classList.add('dog-card');
+  
+      dogCard.innerHTML = `
+        <img src="${dog.img}" alt="Dog Image">
+        <div class="dog-card-content">
+          <p>${dog.breed}</p>
+          <p>${dog.age}</p>
+          <p>${dog.gender}</p>
+          <p>${dog.center}</p>
+          <p>${dog.start}</p>
+          <p>${dog.end}</p>
+          <button class="adopt-button">입양하기</button>
+        </div>
+      `;
+  
+      // 입양하기 버튼 클릭 시 확인 메시지
+      dogCard.querySelector('.adopt-button').addEventListener('click', (event) => {
+        event.stopPropagation();  // 버튼 클릭 시 부모 요소의 클릭 이벤트가 발생하지 않도록 함
+        let confirmAdoption = confirm("입양 신청하시겠습니까?");
+        if (confirmAdoption) {
+          alert("입양 신청이 완료되었습니다.");
+        } else {
+          alert("입양 신청을 취소하였습니다.");
+        }
+      });
+  
+      // 찜목록 아이템 클릭 시 해당 링크로 이동
+      dogCard.addEventListener('click', () => {
+        window.location.href = `adopt2.html${dog.link}`;
+      });
+  
+      wishlistContainer.appendChild(dogCard);
+    });
+  </script>
+  <script src="js/list.js"></script>
+</body>
+</html>

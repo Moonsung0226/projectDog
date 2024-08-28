@@ -1,0 +1,65 @@
+/* 폰트 */
+@font-face {
+  font-family: 'mainlight';
+  src: url('GmarketSansTTFLight.ttf') format('truetype');
+  }
+@font-face {
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainmedium';
+  src: url('GmarketSansTTFMedium.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'mainbold';
+  src: url('GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'dadoc';
+  src: url('Binggrae-Bold.ttf') format('truetype');
+}
+ul{
+  list-style:none;
+}
+a.btn{
+  text-decoration-line: none;
+}
+.wrap{
+  padding:15px; 
+  letter-spacing:-0.5px;
+}
+.tab_menu{
+  position:relative;
+}
+.tab_menu .list{
+  overflow:hidden;
+}
+.tab_menu .list li{
+  float:left; 
+  margin-right:14px;
+}
+.tab_menu .list .btn{
+  text-align: center;
+  margin: 0 20px;
+  padding: 10px 60px;
+  background-color: rgba(42, 66, 38, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 60px;
+  font-size: 30px;
+  font-family: 'mainmedium';
+}
+.tab_menu .list li.active .btn {
+  font-weight: bold;
+  background-color: rgba(42, 66, 38);
+  color: rgb(245, 240, 221);
+}
+.tab_menu .list .cont{
+  display:none; 
+  position:absolute; 
+  top:25px; 
+  left:0; 
+}
+.tab_menu .list li.active .cont{
+  display:block;
+}
